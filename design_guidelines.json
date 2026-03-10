@@ -1,0 +1,125 @@
+{
+  "project_name": "Original Parfums - Luxury Catalog",
+  "theme": "dark",
+  "design_system": {
+    "colors": {
+      "palette": {
+        "primary": "#D4AF37",
+        "primary_foreground": "#000000",
+        "background": "#1A0505",
+        "foreground": "#F5F5F0",
+        "card": "rgba(20, 5, 5, 0.7)",
+        "card_foreground": "#F5F5F0",
+        "border": "rgba(212, 175, 55, 0.2)",
+        "accent": "#5C0A0A",
+        "accent_foreground": "#D4AF37",
+        "muted": "rgba(255, 255, 255, 0.05)",
+        "muted_foreground": "#A8A8A8"
+      },
+      "utility_classes": {
+        "glass_panel": "backdrop-blur-xl bg-[#1A0505]/60 border border-[#D4AF37]/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)]",
+        "gold_glow": "shadow-[0_0_15px_rgba(212,175,55,0.3)]",
+        "text_gradient": "bg-clip-text text-transparent bg-gradient-to-r from-[#D4AF37] to-[#F4E29E]"
+      }
+    },
+    "typography": {
+      "font_family": {
+        "heading": "Playfair Display, serif",
+        "body": "Montserrat, sans-serif",
+        "mono": "Cormorant Garamond, serif"
+      },
+      "imports": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+      ],
+      "styles": {
+        "h1": "font-heading text-5xl md:text-7xl font-medium tracking-tight text-[#D4AF37]",
+        "h2": "font-heading text-3xl md:text-4xl font-normal tracking-wide",
+        "h3": "font-heading text-xl md:text-2xl font-normal tracking-wide text-[#F4E29E]",
+        "body": "font-body text-base font-light leading-relaxed text-[#F5F5F0]/90",
+        "caption": "font-body text-xs tracking-[0.2em] uppercase text-[#D4AF37]/80"
+      }
+    },
+    "spacing": {
+      "container_padding": "p-6 md:p-12 lg:p-16",
+      "grid_gap": "gap-6 md:gap-8",
+      "section_spacing": "py-20 md:py-32"
+    },
+    "border_radius": {
+      "card": "rounded-none",
+      "button": "rounded-none",
+      "input": "rounded-none"
+    }
+  },
+  "layout_strategies": {
+    "dashboard_grid": "grid grid-cols-1 md:grid-cols-12 gap-6 p-6 min-h-screen bg-[#1A0505]",
+    "sidebar": "fixed left-0 top-0 h-full w-20 md:w-64 bg-[#0F0303]/90 border-r border-[#D4AF37]/20 z-50 transition-all duration-300",
+    "main_content": "md:ml-64 transition-all duration-300 p-8",
+    "bento_grid": {
+      "wrapper": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-[400px]",
+      "hero_item": "md:col-span-2 md:row-span-2",
+      "tall_item": "row-span-2",
+      "wide_item": "md:col-span-2"
+    }
+  },
+  "components": {
+    "CatalogGrid": {
+      "description": "A dynamic masonry-style grid for displaying perfume items. Uses 'Bento' logic.",
+      "styles": "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6",
+      "item_style": "group relative overflow-hidden border border-[#D4AF37]/10 bg-[#2D0A0A]/40 hover:border-[#D4AF37]/50 transition-all duration-500"
+    },
+    "ItemCard": {
+      "description": "Minimalist luxury card. Image dominates. Text appears on hover or sits elegantly below.",
+      "interaction": "hover:scale-[1.02] transition-transform duration-500",
+      "elements": {
+        "image": "aspect-[3/4] object-cover w-full opacity-90 group-hover:opacity-100 transition-opacity",
+        "overlay": "absolute inset-0 bg-gradient-to-t from-[#1A0505] via-transparent to-transparent opacity-60",
+        "details": "absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300"
+      }
+    },
+    "Sidebar": {
+      "description": "Vertical navigation with luxury branding.",
+      "elements": {
+        "logo_area": "h-24 flex items-center justify-center border-b border-[#D4AF37]/10",
+        "nav_item": "flex items-center gap-4 px-6 py-4 text-[#F5F5F0]/70 hover:text-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors font-body tracking-widest text-sm uppercase"
+      }
+    },
+    "ItemDetailModal": {
+      "description": "Immersive split-screen modal.",
+      "wrapper": "fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm",
+      "content": "w-full max-w-5xl h-[80vh] bg-[#1A0505] border border-[#D4AF37]/30 grid grid-cols-1 md:grid-cols-2 overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-300"
+    },
+    "FilterBar": {
+      "description": "Horizontal scrolling pill list or top bar.",
+      "style": "flex gap-4 overflow-x-auto pb-4 mb-8 scrollbar-hide",
+      "item": "px-6 py-2 border border-[#D4AF37]/30 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#1A0505] transition-all font-body text-xs tracking-widest uppercase cursor-pointer whitespace-nowrap"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_background": "https://images.unsplash.com/photo-1750598243589-1cc3770356b8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBwZXJmdW1lJTIwYm90dGxlJTIwZ29sZCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzE4NDAyOHww&ixlib=rb-4.1.0&q=85",
+      "product_1": "https://images.unsplash.com/photo-1737920459846-2d0318700658?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBwZXJmdW1lJTIwYm90dGxlJTIwZ29sZCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzE4NDAyOHww&ixlib=rb-4.1.0&q=85",
+      "texture_bg": "https://images.unsplash.com/photo-1767089261456-1de8dc10e765?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBwZXJmdW1lJTIwYm90dGxlJTIwZ29sZCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzE4NDAyOHww&ixlib=rb-4.1.0&q=85",
+      "decorative_gold": "https://images.unsplash.com/photo-1769123012414-6c6b5c17ad45?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGdvbGQlMjBkdXN0JTIwcGFydGljbGVzJTIwYmxhY2slMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzE4NDAyOXww&ixlib=rb-4.1.0&q=85",
+      "logo_ref": "Use a text-only Original Parfums monogram in gold instead of an external logo asset."
+    },
+    "icons_library": "lucide-react",
+    "icons_to_use": ["Search", "Menu", "X", "ShoppingBag", "Heart", "Filter", "ChevronRight", "Star"]
+  },
+  "instructions_to_main_agent": [
+    "INSTALL FONTS: Add the Google Fonts import to public/index.html or the main CSS file immediately.",
+    "TAILWIND CONFIG: Update tailwind.config.js to include the custom colors (burgundy #1A0505, gold #D4AF37) and font families defined in 'typography'.",
+    "GLOBAL CSS: Set body background to #1A0505 and text to #F5F5F0. Add a subtle noise texture overlay if possible.",
+    "SIDEBAR: Create a fixed sidebar on the left. On mobile, make it a drawer.",
+    "MOCK DATA: Create a robust 'perfumes' array with at least 8 items. Each must have id, name, brand, price, notes (array), and image (rotate the provided Unsplash images).",
+    "DETAIL MODAL: When a card is clicked, open the Modal. The modal should look like a magazine spread.",
+    "NO DEFAULT SHADCN: Heavily override Shadcn components. No white backgrounds. No rounded-md (use rounded-none or rounded-sm for a sharper luxury feel).",
+    "TESTING: Add data-testid to all interactive elements (search-input, filter-btn, product-card-{id}, add-to-cart-btn)."
+  ],
+  "universal_guidelines": [
+    "Avoid gradients on text unless it is a very large heading.",
+    "Do not use generic centered layouts. Use asymmetry.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Every interaction needs micro-animations.",
+    "Never use pure black #000000; use #1A0505 or #0F0303."
+  ]
+}
